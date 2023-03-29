@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EmployeeController {
-//    EmployeeService employeeService = new EmployeeService();
-//
-//    @GetMapping
-//    public String hello() {
-//        return "Hello";
-//    }
-//    @GetMapping(path = "add")
-//    public String addEmployee(
-//            @RequestParam("firstName") String firstName,
-//            @RequestParam("lastName") String lastName
-//    ) {
-//       return employeeService.addEmployee(firstName, lastName);
-//    }
+    EmployeeService employeeService = new EmployeeService();
+
+    @GetMapping
+    public String hello() {
+        return "Hello";
+    }
+    @GetMapping(path = "add")
+    public String addEmployee(
+            @RequestParam("firstName") String firstName,
+            @RequestParam("lastName") String lastName
+    ) {
+       return employeeService.addEmployee(firstName, lastName);
+    }
 }
