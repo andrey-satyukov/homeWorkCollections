@@ -10,10 +10,14 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "{" +
                 "firstName='" + firstName + '\'' +
-                ",lasteName" + lasteName;
+                ", lasteName='" + lasteName + '\'' +
+                '}';
     }
+
+////        { "firstName": "Ivan", "lastName": "Ivanov" }
+
 
     public String getFirstName() {
         return firstName;
