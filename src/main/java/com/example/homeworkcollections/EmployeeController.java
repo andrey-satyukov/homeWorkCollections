@@ -1,11 +1,10 @@
 package com.example.homeworkcollections;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 @RestController
+@ResponseStatus
 public class EmployeeController {
     EmployeeService employeeService = new EmployeeService();
 
@@ -14,6 +13,7 @@ public class EmployeeController {
         return "Hello";
     }
     @GetMapping(path = "/employee/add")
+    @RequestScope
     public Employee addEmployee(
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName
@@ -22,12 +22,14 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/employee/remove")
+    @RequestScope
     public Employee deleteEmployee(
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName) {
         return employeeService.deleteEmployee(firstName, lastName);
     }
     @GetMapping (path = "/employee/find")
+    @RequestScope
     public Employee findEmployee(
             @RequestParam("firstName") String firstName,
             @RequestParam ("lastName") String lastName
