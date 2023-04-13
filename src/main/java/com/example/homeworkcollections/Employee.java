@@ -16,8 +16,9 @@ public class Employee {
                 '}';
     }
 
-////        { "firstName": "Ivan", "lastName": "Ivanov" }
-
+    public String getFullName() {
+        return firstName + " " + lasteName;
+    }
 
     public String getFirstName() {
         return firstName;
